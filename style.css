@@ -6,6 +6,7 @@ body {
   width: 100%;
   font-family: "Poppins", sans-serif;
   color: #222;
+  scroll-behavior: smooth;
 }
 
 footer .img-fluid {
