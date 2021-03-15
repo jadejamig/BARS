@@ -33,7 +33,7 @@
             <i class="fas fa-angle-left"></i>
           </a>
           <!-- <a href="javascript:history.back()" class="brrt"><b>Go back</b></a> -->
-          <a href="index.html" class="brrt"><b>Go back</b></a>
+          <a href="homepage.php" class="brrt"><b>Go back</b></a>
         </div>
 
         <div class="card login-card">
@@ -67,7 +67,7 @@
                     <?php
                       if (isset($_SESSION['error'])){
                         $error = $_SESSION['error'];
-                        echo "<p class=\"login-card-footer-text\">$error</p>"
+                        echo "<p class=\"login-card-footer-text\">$error</p>";
                       }
                     ?>
                   </div>
