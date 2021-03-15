@@ -32,7 +32,8 @@
           <a href="javascript:history.back()">
             <i class="fas fa-angle-left"></i>
           </a>
-          <a href="javascript:history.back()" class="brrt"><b>Go back</b></a>
+          <!-- <a href="javascript:history.back()" class="brrt"><b>Go back</b></a> -->
+          <a href="index.html" class="brrt"><b>Go back</b></a>
         </div>
 
         <div class="card login-card">
@@ -81,7 +82,7 @@
                 <a href="#!" class="forgot-password-link">Forgot password?</a>
                 <p class="login-card-footer-text">
                   Don't have an account?
-                  <a href="#!" class="text-reset">Register here</a>
+                  <a href="sign_up.html" class="text-reset">Register here</a>
                 </p>
                 <nav class="login-card-footer-nav">
                   <a href="#!">Terms of use.</a>
