@@ -67,7 +67,7 @@
                     <?php
                       if (isset($_SESSION['error'])){
                         $error = $_SESSION['error'];
-                        echo "<p class=\"login-card-footer-text-error\">$error</p>"
+                        echo "<p class=\"login-card-footer-text-error\">$error</p>";
                       }
                     ?>
                   </div>
