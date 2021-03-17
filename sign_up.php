@@ -31,7 +31,7 @@
           <a href="javascript:history.back()">
             <i class="fas fa-angle-left"></i>
           </a>
-          <a href="index.html" class="brrt"><b>Go back</b></a>
+          <a href="homepage.php" class="brrt"><b>Go back</b></a>
         </div>
 
         <div class="card login-card">
@@ -114,19 +114,6 @@
                       placeholder="Confirm password"
                     />
                   </div>
-                  <!-- <div class="form-group mb-4">
-                    <label
-                      for="identificationPhoto"
-                      class="login-card-file-text"
-                      >Proof of Identification</label
-                    >
-                    <input
-                      type="file"
-                      name="identificationPhoto"
-                      id="identificationPhoto"
-                      class="form-control-file"
-                    />
-                  </div> -->
                   <div class="input-group mb-3">
                     <div class="custom-file">
                       <input
@@ -161,7 +148,7 @@
                 </form>
                 <p class="login-card-footer-text">
                   Already have an account?
-                  <a href="login.html" class="text-reset">Login here</a>
+                  <a href="login.php" class="text-reset">Login here</a>
                 </p>
                 <nav class="login-card-footer-nav">
                   <a href="#!">Terms of use.</a>

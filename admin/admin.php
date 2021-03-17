@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <link href="style.css" rel="stylesheet" />
+    <link href="../style.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Raleway"
@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="img/bgy_logo.png" class="img-fluid" alt="logo" />
+          <img src="../img/bgy_logo.png" class="img-fluid" alt="logo" />
         </a>
         <button
           class="navbar-toggler"
@@ -33,22 +33,24 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <h2>Admin page</h2>
+            </li>
+          </ul>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="admin.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#">Manage Users</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Reservation</a>
+              <a class="nav-link" href="#">Manage Reservations</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.php">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="sign_up.php">Sign up</a>
+              <a class="nav-link" href="login.html">Sign out</a>
             </li>
           </ul>
         </div>
@@ -64,7 +66,7 @@
       </ul>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="img/outreach2.png" alt="" />
+          <img src="../img/outreach2.png" alt="" />
           <div class="carousel-caption">
             <!-- <h1 class="display-2">Outreach Programs</h1> -->
             <h3>OUTREACH PROGRAMS</h3>
@@ -77,10 +79,10 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="img/outreach1.png" alt="" />
+          <img src="../img/outreach1.png" alt="" />
         </div>
         <div class="carousel-item">
-          <img src="img/outreach3.png" alt="" />
+          <img src="../img/outreach3.png" alt="" />
         </div>
       </div>
     </div>
@@ -100,7 +102,7 @@
         <div class="col-md-4">
           <div class="card">
             <img
-              src="img/brgy_official1.png"
+              src="../img/brgy_official1.png"
               class="card-img-top"
               alt="team1"
             />
@@ -116,7 +118,7 @@
         <div class="col-md-4">
           <div class="card">
             <img
-              src="img/brgy_official2.png"
+              src="../img/brgy_official2.png"
               class="card-img-top"
               alt="team1"
             />
@@ -132,7 +134,7 @@
         <div class="col-md-4">
           <div class="card">
             <img
-              src="img/brgy_official3.png"
+              src="../img/brgy_official3.png"
               class="card-img-top"
               alt="team1"
             />
@@ -153,7 +155,7 @@
       <div class="container-fluid padding text-center">
         <div class="row">
           <div class="col-md-4">
-            <img src="img/bgy_logo.png" class="img-fluid" alt="logo" />
+            <img src="../img/bgy_logo.png" class="img-fluid" alt="logo" />
           </div>
           <div class="col-md-4">
             <h5>OFFICIALS</h5>
