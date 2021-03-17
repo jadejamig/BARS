@@ -1,5 +1,10 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,7 +49,7 @@
             <div class="col-md-7">
               <div class="card-body">
                 <p class="login-card-description">Sign into your account</p>
-                <form action="#!" method="post">
+                <form action="login_check.php" method="post">
                   <div class="form-group">
                     <label for="username" class="sr-only">Username</label>
                     <input
@@ -67,7 +72,8 @@
                     <?php
                       if (isset($_SESSION['error'])){
                         $error = $_SESSION['error'];
-                        echo "<p class=\"login-card-footer-text\">$error</p>";
+                        echo "<p class=\"login-card-footer-text-error\">$error</p>";
+                        unset($_SESSION['error']);
                       }
                     ?>
                   </div>
@@ -75,7 +81,7 @@
                     name="login"
                     id="login"
                     class="btn btn-block login-btn mb-4"
-                    type="button"
+                    type="submit"
                     value="Login"
                   />
                 </form>
@@ -96,44 +102,9 @@
     </main>
   </body>
 
-  <?php
-    unset($_SESSION['error']);
-  ?>
-
-  <?php
-
-    if (isset($_POST['login'])){
-      $username = $_POST['username'];
-      $password = sha1($_POST['password']);
-      $error = "Invalid login credentials.";
-
-      include 'connection.php';
-
-      $query = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
-      $result = mysqli_query($conn,$query);
-
-      if(mysqli_num_rows($result) != 0){
-        session_start();
-
-        $row = mysqli_fetch_array($result);
-        $_SESSION['username'] = $row['username'];
-        $_SESSION['usertype'] = $row['user_admin'];
-
-        if($_SESSION['usertype'] == 1){
-          //header("location: homepageadmin.php);
-          header("location: homepage.php");
-        }
-        else{
-          header("location: homepage.php");
-        }
-      }
-      else{
-        $_SESSION['error'] = $error;
-        header("location: login.php");
-      }
-    }
-
-  ?>
 </html>
+
+
+
 
 
