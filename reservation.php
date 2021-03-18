@@ -29,7 +29,44 @@
     />
   </head>
   <body>
-    <div class="container-fluid padding">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="img/bgy_logo.png" class="img-fluid" alt="logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="homepage.php">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="reservation.php">Reservation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.php">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sign_up.php">Sign up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <!-- CALENDAR SECTION -->
+    <div class="container-fluid padding calendar">
       <div class="row">
         <div class="col-11 heading-text">
           <h3><?php echo "$mydate[month] $mydate[year]"?></h3>
