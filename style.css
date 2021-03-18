@@ -123,6 +123,27 @@ footer .img-fluid {
 .fa-instagram :hover {
   color: #d5d5d5;
 }
+
+.fa-credit-card {
+  color: green;
+}
+.fa-handshake {
+  color: rgb(0, 157, 255);
+}
+.fa-balance-scale {
+  color: rgb(255, 196, 0);
+}
+.fa-heartbeat {
+  color: #bb0000;
+}
+.fa-heartbeat,
+.fa-credit-card,
+.fa-handshake,
+.fa-balance-scale {
+  font-size: 4em;
+  margin: 1rem;
+}
+
 footer {
   background-color: #e3e9ed;
   padding-top: 4.5rem;

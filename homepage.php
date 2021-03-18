@@ -42,7 +42,7 @@
               <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="reservation.html">Reservation</a>
+              <a class="nav-link" href="reservation.php">Reservation</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="login.php">Login</a>
@@ -144,6 +144,33 @@
               </a>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICES SECTION -->
+    <div class="container-fluid padding">
+      <div class="row text-center">
+        <div class="col-xs-12 col-sm-6 services p-5">
+          <i class="far fa-credit-card"></i>          
+          <h3>Taxes & Fees</h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima porro, optio nam eum dolorum quae dolor officia, nobis distinctio nesciunt fugit deleniti enim. Necessitatibus eum rem quidem molestias adipisci enim.</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 services p-5">
+          <i class="far fa-handshake"></i>
+          <h3>Social Services</h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima porro, optio nam eum dolorum quae dolor officia, nobis distinctio nesciunt fugit deleniti enim. Necessitatibus eum rem quidem molestias adipisci enim.</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 services p-5">
+          <i class="fas fa-balance-scale"></i>
+          <h3>Legal Services</h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima porro, optio nam eum dolorum quae dolor officia, nobis distinctio nesciunt fugit deleniti enim. Necessitatibus eum rem quidem molestias adipisci enim.</p>
+
+        </div>
+        <div class="col-xs-12 col-sm-6 services p-5">
+          <i class="fas fa-heartbeat"></i>
+          <h3>Health Services</h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima porro, optio nam eum dolorum quae dolor officia, nobis distinctio nesciunt fugit deleniti enim. Necessitatibus eum rem quidem molestias adipisci enim.</p>
         </div>
       </div>
     </div>

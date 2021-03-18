@@ -35,7 +35,7 @@ if (isset($_POST['login'])){
 
       if($_SESSION['usertype'] == 1){
         //header("location: homepageadmin.php);
-        header("location: homepage.php");
+        header("location: admin/admin.php");
       }
 
       else{
