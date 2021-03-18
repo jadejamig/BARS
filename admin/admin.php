@@ -50,7 +50,7 @@
               <a class="nav-link" href="#">Manage Reservations</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.html">Sign out</a>
+              <a class="nav-link" href="#">Sign out</a>
             </li>
           </ul>
         </div>
