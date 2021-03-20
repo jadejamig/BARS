@@ -15,6 +15,7 @@ if (isset($_POST['login'])){
     $username = $_POST['username'];
     $password = sha1($_POST['password']);
     $error = "Invalid login credentials.";
+    $verifyerror = "Your account is not verified.";
 
     //connect to databe
     include 'connection.php';
@@ -25,19 +26,21 @@ if (isset($_POST['login'])){
 
     //if account exists in database, initialize session variables
     //otherwise display error messages
-
     if(mysqli_num_rows($result) == 1){
       
       $row = mysqli_fetch_array($result);
       $_SESSION['login'] = true;
       $_SESSION['username'] = $row['username'];
       $_SESSION['usertype'] = $row['user_admin'];
+      $_SESSION['verified'] = $row['verified_user'];
 
       if($_SESSION['usertype'] == 1){
-        //header("location: homepageadmin.php);
         header("location: admin/admin.php");
       }
-
+      else if($_SESSION['verified'] == 0){
+        $_SESSION['error'] = $verifyerror;
+        header("location: login.php");
+      }
       else{
         header("location: homepage.php");
       }
