@@ -60,6 +60,9 @@ body {
     padding: 35px 24px;
   }
 }
+.success-desc {
+  font-size: 50px !important;
+}
 .login-card-description {
   font-size: 25px;
   color: #000;
@@ -130,6 +133,10 @@ body {
 .login-card-footer-success {
   font-size: 16px;
   /* color: #0d2366; */
+  color: green;
+}
+
+.text-success {
   color: green;
 }
 

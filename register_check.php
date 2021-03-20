@@ -105,9 +105,9 @@
                 //successful
                 if($result){
                     move_uploaded_file($_FILES['file']['tmp_name'],$path);
-                    $_SESSION['success'] = "You have registered successfully! Please wait for the admin to verify your account.";
+                    $_SESSION['success'] = "Please wait for the admin to verify your account.";
                     unset($_SESSION['fName'],$_SESSION['lName'],$_SESSION['email'],$_SESSION['address'],$_SESSION['username']);
-                    header("location: sign_up.php");
+                    header("location: sign_up_success.php");
                 }
                 else if(mysqli_errno($conn) == 1062){
                     $_SESSION['usernameError'] = $usernameerror;
