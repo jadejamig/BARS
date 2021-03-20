@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,7 +43,7 @@
             <div class="col-md-12">
               <div class="card-body">
                 <p class="login-card-description">Create an account</p>
-                <form action="#!" method="post">
+                <form action="register_check.php" method="post" enctype="multipart/form-data">
                   <div class="form-group row name mb-0">
                     <div class="col-6 pl-0">
                       <label for="firstName" class="sr-only">First name</label>
@@ -49,6 +53,7 @@
                         id="firstName"
                         class="form-control"
                         placeholder="First name"
+                        value="<?php echo isset($_SESSION["fName"]) ? $_SESSION["fName"] : ''; ?>"
                       />
                     </div>
                     <div class="col-6 pl-0">
@@ -59,8 +64,16 @@
                         id="lastName"
                         class="form-control"
                         placeholder="Last name"
+                        value="<?php echo isset($_SESSION["lName"]) ? $_SESSION["lName"] : ''; ?>"
                       />
                     </div>
+                    <?php
+                        if (isset($_SESSION['NameError'])){
+                          $error = $_SESSION['NameError'];
+                          echo "<p class=\"login-card-footer-error\">$error</p>";
+                          unset($_SESSION['NameError']);
+                        }
+                     ?>
                   </div>
                   <div class="form-group mb-0">
                     <label for="email" class="sr-only">Email</label>
@@ -70,7 +83,15 @@
                       id="email"
                       class="form-control"
                       placeholder="Email"
+                      value="<?php echo isset($_SESSION["email"]) ? $_SESSION["email"] : ''; ?>"
                     />
+                    <?php
+                      if (isset($_SESSION['emailError'])){
+                        $error = $_SESSION['emailError'];
+                        echo "<p class=\"login-card-footer-error\">$error</p>";
+                        unset($_SESSION['emailError']);
+                      }
+                    ?>
                   </div>
                   <div class="form-group mb-0">
                     <label for="address" class="sr-only">Address</label>
@@ -80,7 +101,15 @@
                       id="address"
                       class="form-control"
                       placeholder="Address"
+                      value="<?php echo isset($_SESSION["address"]) ? $_SESSION["address"] : ''; ?>"
                     />
+                    <?php
+                      if (isset($_SESSION['addressError'])){
+                        $error = $_SESSION['addressError'];
+                        echo "<p class=\"login-card-footer-error\">$error</p>";
+                        unset($_SESSION['addressError']);
+                      }
+                    ?>
                   </div>
                   <div class="form-group mb-0">
                     <label for="username" class="sr-only">Username</label>
@@ -90,7 +119,15 @@
                       id="username"
                       class="form-control"
                       placeholder="Username"
+                      value="<?php echo isset($_SESSION["username"]) ? $_SESSION["username"] : ''; ?>"
                     />
+                    <?php
+                      if (isset($_SESSION['usernameError'])){
+                        $error = $_SESSION['usernameError'];
+                        echo "<p class=\"login-card-footer-error\">$error</p>";
+                        unset($_SESSION['usernameError']);
+                      }
+                    ?>
                   </div>
                   <div class="form-group mb-0">
                     <label for="password" class="sr-only">Password</label>
@@ -102,6 +139,13 @@
                       placeholder="Password"
                     />
                   </div>
+                  <?php
+                      if (isset($_SESSION['passwordError'])){
+                        $error = $_SESSION['passwordError'];
+                        echo "<p class=\"login-card-footer-error\">$error</p>";
+                        unset($_SESSION['passwordError']);
+                      }
+                    ?>
                   <div class="form-group mb-0">
                     <label for="confirmPassword" class="sr-only"
                       >Confirm password</label
@@ -118,14 +162,23 @@
                     <div class="custom-file">
                       <input
                         type="file"
+                        name="file"
                         class="custom-file-input"
                         id="inputGroupFile01"
+                        accept = ".jpeg, .jpg, .png"
                       />
                       <label class="custom-file-label" for="inputGroupFile01"
                         >Choose file</label
                       >
                     </div>
                   </div>
+                  <?php
+                      if (isset($_SESSION['fileError'])){
+                        $error = $_SESSION['fileError'];
+                        echo "<p class=\"login-card-footer-error\">$error</p>";
+                        unset($_SESSION['fileError']);
+                      }
+                    ?>
                   <script>
                     $("#inputGroupFile01").on("change", function () {
                       //get the file name
@@ -142,9 +195,21 @@
                     name="register"
                     id="register"
                     class="btn btn-block login-btn mb-4"
-                    type="button"
+                    type="submit"
                     value="Register"
                   />
+                  <?php
+                    if (isset($_SESSION['message'])){
+                      $message = $_SESSION['message'];
+                      echo "<p class=\"login-card-footer-error\">$message</p>";
+                      unset($_SESSION['message']);
+                    }
+                    if (isset($_SESSION['success'])){
+                      $message = $_SESSION['success'];
+                      echo "<p class=\"login-card-footer-success\">$message</p>";
+                      unset($_SESSION['success']);
+                    }
+                  ?>
                 </form>
                 <p class="login-card-footer-text">
                   Already have an account?
@@ -162,3 +227,14 @@
     </main>
   </body>
 </html>
+
+<?php
+  //Unsets variables so that if the pages get reloaded/reaccessed
+  //the values would be back to empty
+
+  //Unset field form variables
+  unset($_SESSION['fName'],$_SESSION['lName'],$_SESSION['email'],$_SESSION['address'],$_SESSION['username']);
+
+  //Unset error variables
+  // unset($_SESSION['message']);
+?>
