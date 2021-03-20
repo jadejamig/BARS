@@ -10,7 +10,7 @@
     <meta name="author" content="" />
 
     <title>Baranggay Offical Website</title>
-
+    
     <!-- Bootstrap core CSS -->
     <link href="about_css/about-bootstrap.min.css" rel="stylesheet" />
 
@@ -23,7 +23,14 @@
       href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i"
       rel="stylesheet"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <!-- Custom styles for this template -->
     <link href="about_css/about-style.min.css" rel="stylesheet" />
   </head>
@@ -49,7 +56,7 @@
               <a class="nav-link" href="homepage.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="about.php">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="reservation.php">Reservation</a>
