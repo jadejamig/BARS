@@ -44,7 +44,10 @@
               <a class="nav-link" href="admin.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Manage Users</a>
+              <a class="nav-link" href="manage_users.php">Manage Users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="manage_signup.php">Manage Sign up</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Manage Reservations</a>

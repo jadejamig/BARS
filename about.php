@@ -9,7 +9,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Baranggay Offical Website</title>
+    <title>BARS</title>
     
     <!-- Bootstrap core CSS -->
     <link href="about_css/about-bootstrap.min.css" rel="stylesheet" />
