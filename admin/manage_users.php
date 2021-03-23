@@ -71,7 +71,7 @@
 
             include '../connection.php';
 
-            $query = "SELECT * from user";
+            $query = "SELECT * from user WHERE verified_user = 1";
             $result = mysqli_query($conn,$query);
 
             while($row = mysqli_fetch_array($result)){

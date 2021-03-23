@@ -70,44 +70,22 @@
           <tbody>
             <?php
 
-              $users = array(
-                array("1", "Chrys Salazar", "../img/verification/chrys.jpeg"),
-                array("2", "Chris Dotimas", "../img/verification/chris.jpeg"),
-                array("3", "James Erne", "../img/verification/james.png"),
-                array("4", "Jade Jamig", "../img/verification/jade.JPG")
-              );
-              
-              $userCount = count($users);
+              include '../connection.php';
 
-              for ($i=0; $i<$userCount; $i++){
-                
-                echo "<tr>";
-                  for ($j=0; $j<5; $j++){
+              $query = "SELECT * from user WHERE verified_user <> 1";
+              $result = mysqli_query($conn,$query);
 
-                    if ($j < 2){
-                      ?>
-                        <td scope="col"  class="day day-num "><?php echo $users[$i][$j]; ?></td>
-                      <?php
-                    }
-                    if ($j == 2){
-                      ?>
-                        <td scope="col" target="_blank" class="day day-num text-info"><a href="<?php echo $users[$i][$j]; ?>">ID photo</a></td>
-                      <?php
-                    }
-                    elseif ($j == 3) {
-                      ?>
-                        <td scope="col"  class="day day-num btn-success text-white"><a href="#">Accept</a></td>
-                      <?php
-                    }
-                    elseif ($j == 4) {
-                      ?>
-                        <td scope="col"  class="day day-num btn-danger text-white"><a href="#">Decline</a></td>
-                      <?php
-                    }
-                  }
-                echo "</tr>";
+              if($result){
+                while($row = mysqli_fetch_array($result)){
+                  echo "<tr>";
+                  echo "<td scope=\"col\"  class=\"day day-num b\">".$row['user_id']."</td>";
+                  echo "<td scope=\"col\"  class=\"day day-num b\">".$row['first_name']." ".$row['last_name']."</td>";
+                  echo "<td scope=\"col\" target=\"_blank\" class=\"day day-num text-info\"><a href='photo_viewer.php?image=".$row['id_file']."'>ID photo</a></td>";
+                  echo "<td scope=\"col\"  class=\"day day-num btn-success text-white\"><a href='user_activator.php?user=accept&id=".$row['user_id']."'>Accept</a></td>";
+                  echo "<td scope=\"col\"  class=\"day day-num btn-danger text-white\"><a href='user_activator.php?user=deny&id=".$row['user_id']."'>Decline</a></td>";
+                  echo "</tr>";
+                }
               }
-
             ?>
           </tbody>
         </table>
@@ -115,3 +93,41 @@
     </div>
   </body>
 </html>
+
+<!-- // $users = array(
+              //   array("1", "Chrys Salazar", "../img/verification/chrys.jpeg"),
+              //   array("2", "Chris Dotimas", "../img/verification/chris.jpeg"),
+              //   array("3", "James Erne", "../img/verification/james.png"),
+              //   array("4", "Jade Jamig", "../img/verification/jade.JPG")
+              // );
+              
+              // $userCount = count($users);
+
+              // for ($i=0; $i<$userCount; $i++){
+                
+              //   echo "<tr>";
+              //     for ($j=0; $j<5; $j++){
+
+              //       if ($j < 2){
+              //         ?>
+              //           <td scope="col"  class="day day-num "><?php echo $users[$i][$j]; ?></td>
+              //         <?php
+              //       }
+              //       if ($j == 2){
+              //         ?>
+              //           <td scope="col" target="_blank" class="day day-num text-info"><a href="<?php echo $users[$i][$j]; ?>">ID photo</a></td>
+              //         <?php
+              //       }
+              //       elseif ($j == 3) {
+              //         ?>
+              //           <td scope="col"  class="day day-num btn-success text-white"><a href="#">Accept</a></td>
+              //         <?php
+              //       }
+              //       elseif ($j == 4) {
+              //         ?>
+              //           <td scope="col"  class="day day-num btn-danger text-white"><a href="#">Decline</a></td>
+              //         <?php
+              //       }
+              //     }
+              //   echo "</tr>";
+              // } -->
