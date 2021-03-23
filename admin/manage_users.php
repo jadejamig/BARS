@@ -56,11 +56,6 @@
 
     <!-- CALENDAR SECTION -->
     <div class="container-fluid padding calendar">
-      <div class="row">
-        <div class="col-11 heading-text">
-          <h3><?php echo "$mydate[month] $mydate[year]"?></h3>
-        </div>
-      </div>
       <div class="row heading">
         <table class="table table-bordered text-center">
           <thead>

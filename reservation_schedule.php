@@ -25,7 +25,7 @@
           <a href="javascript:history.back()">
             <i class="fas fa-angle-left"></i>
           </a>
-          <a href="homepage.php" class="brrt"><b>Go back</b></a>
+          <a href="reservation.php" class="brrt"><b>Go back</b></a>
           
         </div>
 
