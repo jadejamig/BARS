@@ -17,7 +17,7 @@ if (isset($_POST['login'])){
     $error = "Invalid login credentials.";
     $verifyerror = "Your account is not verified.";
 
-    //connect to databe
+    //connect to database
     include 'connection.php';
 
     //Check username and password from database

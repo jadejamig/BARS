@@ -56,11 +56,6 @@
 
     <!-- CALENDAR SECTION -->
     <div class="container-fluid padding calendar">
-      <div class="row">
-        <div class="col-11 heading-text">
-          <h3><?php echo "$mydate[month] $mydate[year]"?></h3>
-        </div>
-      </div>
       <div class="row heading">
         <table class="table table-bordered text-center">
           <thead>
@@ -74,35 +69,19 @@
           <tbody>
             <?php
 
-              $users = array(
-                array("1", "Chrys Salazar", "salazarchrys@gmail.com"),
-                array("2", "Chris Dotimas", "dotimaschris@gmail.com"),
-                array("3", "James Erne", "ernejames@gmail.com"),
-                array("4", "Jade Jamig", "jamigjade@gmail.com")
-              );
-              
-              $userCount = count($users);
+            include '../connection.php';
 
-              for ($i=0; $i<$userCount; $i++){
-                
-                echo "<tr>";
-                  for ($j=0; $j<4; $j++){
-                    
-                    if ($j != 3){
-                      ?>
-                        <td scope="col"  class="day day-num b"><?php echo $users[$i][$j]; ?></td>
-                      <?php
-                    }
-                    else {
-                      ?>
-                        <td scope="col"  class="day day-num btn-danger"><a href="#">Delete</a></td>
-                      <?php
-                    }
-                    
-                  }
-                echo "</tr>";
-              }
+            $query = "SELECT * from user";
+            $result = mysqli_query($conn,$query);
 
+            while($row = mysqli_fetch_array($result)){
+              echo "<tr>";
+              echo "<td scope=\"col\"  class=\"day day-num b\">".$row['user_id']."</td>";
+              echo "<td scope=\"col\"  class=\"day day-num b\">".$row['first_name']." ".$row['last_name']."</td>";
+              echo "<td scope=\"col\"  class=\"day day-num b\">".$row['email']."</td>";
+              echo "<td scope=\"col\"  class=\"day day-num btn-danger\">"."<a href='delete_user.php?id= " .$row['user_id']. "'>Delete</a>"."</td>";
+              echo "</tr>";
+            }
             ?>
           </tbody>
         </table>
