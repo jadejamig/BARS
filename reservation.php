@@ -55,6 +55,9 @@
               <a class="nav-link" href="reservation.php">Reservation</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="my_reservations.php">My Reservations</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="login.php">Login</a>
             </li>
             <li class="nav-item">
@@ -101,7 +104,7 @@
                           break;
                         }
                         ?>
-                              <td scope="col"  class="day day-num"><a href="login.php?val=<?php echo $day_count ?>"><?php echo $day_count?></a></td>
+                              <td scope="col"  class="day day-num"><a href="reservation_schedule.php?day=<?php echo $day_count ?>"><?php echo $day_count?></a></td>
                         <?php
                         // echo "<a href=\"#\"> <td scope=\"col\"  class=\"day day-num\">$day_count</td> </a>";
                         $day_count += 1;

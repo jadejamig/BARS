@@ -62,6 +62,9 @@
               <a class="nav-link" href="reservation.php">Reservation</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="my_reservations.php">My Reservations</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="login.php">Login</a>
             </li>
             <li class="nav-item">
