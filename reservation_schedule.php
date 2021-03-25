@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="assets/css/reservation_schedule.css" />
+    <link rel="icon" href="img/bgy_logo.png">
   </head>
   <body>
     <!-- SIGN UP SECTIONS -->
@@ -36,22 +37,26 @@
                 <p class="login-card-description"> Reservation - <?php echo "$mydate[month] $_GET[day], $mydate[year]" ?></p>
                 <form action="reservation_check.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="select_time">Select time schedule</label>
+                        <label for="select_time">Select Time Schedule</label>
                         <select class="form-control p-0 pl-4" id="select_time">
-                            <option selected>Select time</option>
+                            <option selected>Select time schedule</option>
                             <option value="1">9:00 am - 12:00 pm</option>
                             <option value="2">1:00 pm - 6:00 pm</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="select_office">Select office</label>
+                        <label for="select_office">Select Concern</label>
                         <select class="form-control p-0 pl-4" id="select_office">
-                            <option selected>Select office</option>
-                            <option value="1">Finance</option>
-                            <option value="2">BIR</option>
-                            <option value="3">Tourism</option>
-                            <option value="4">Medical</option>
-                            <option value="5">DepEd</option>  
+                            <option selected>Select concern</option>
+                            <option value="1">Barangay Clearance</option>
+                            <option value="2">Certificate of Indigency</option>
+                            <option value="3">Proof of Residency</option>
+                            <option value="4">Barangay Permit</option>
+                            <option value="5">Community Certificate</option>  
+                            <option value="5">Medical Mission</option>  
+                            <option value="5">Barangay ID</option>  
+                            <option value="5">Building Permit</option>  
+                            <option value="5">Census</option>  
                         </select>
                     </div>
                     <input

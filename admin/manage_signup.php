@@ -11,6 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link href="../assets/css/manage_signup.css" rel="stylesheet" />
+    <link rel="icon" href="../img/bgy_logo.png">
   </head>
   <body>
     <!-- Navigation -->
@@ -64,7 +65,6 @@
               <th scope="col" class="day">Complete name</th>
               <th scope="col" class="day">Verification Photo</th>
               <th scope="col" class="day" colspan="2">Action</th>
-
             </tr>
           </thead>
           <tbody>

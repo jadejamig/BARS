@@ -15,24 +15,16 @@
     <link href="about_css/about-bootstrap.min.css" rel="stylesheet" />
 
     <!-- Custom fonts for this template -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <!-- Custom styles for this template -->
     <link href="about_css/about-style.min.css" rel="stylesheet" />
+    <link rel="icon" href="img/bgy_logo.png">
   </head>
 
   <body>
@@ -78,7 +70,7 @@
       <span class="site-heading-upper text-primary mb-3"
         >Baranggay Offical Website</span
       >
-      <span class="site-heading-lower">ABOUT MASBATE CITY</span>
+      <span class="site-heading-lower">ABOUT MANLOT-OD</span>
     </h1>
 
     <section class="page-section">
@@ -102,7 +94,7 @@
           <div class="product-item-description d-flex mr-auto">
             <div class="bg-faded p-5 rounded">
               <p class="mb-0">
-                Masbate City is the capital of the province. It is located at
+                Manlot-od is a barangay of Masbate City. It is located at
                 the center of the Philippine archipelago between latitudes
                 11˚43’ north and 21˚35’ north, and between longitudes 123˚9’
                 east and 124˚15’ east, and about 212.5 aerial miles or 362

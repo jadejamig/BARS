@@ -1,0 +1,63 @@
+body {
+  font-family: "Karla", sans-serif;
+  background-color: #e3e9ed;
+  min-height: 0vh;
+}
+
+.back {
+  padding-left: 25px;
+}
+.brrt {
+  display: inline;
+  padding-left: 10px;
+  color: #000;
+}
+.fa-angle-left {
+  font-size: 2em;
+  color: #000 !important;
+  padding-bottom: 10px;
+}
+.brrt:hover {
+  color: #000;
+  text-decoration: none;
+}
+.brand-wrapper {
+  margin-bottom: 19px;
+}
+.brand-wrapper .logo {
+  height: 37px;
+}
+
+.login-card {
+  border: 0;
+  border-radius: 27.5px;
+  box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+  overflow: hidden;
+}
+
+.login-card .card-body {
+  padding: 85px 60px 60px;
+  height: 400px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+@media (max-width: 422px) {
+  .login-card .card-body {
+    padding: 35px 24px;
+  }
+}
+.login-card-description {
+  font-size: 25px;
+  color: #000;
+  font-weight: normal;
+  margin-bottom: 23px;
+}
+
+.container {
+  max-width: 800px;
+}
+
+.img-fluid {
+  padding: 30px;
+  height: 50%;
+}
