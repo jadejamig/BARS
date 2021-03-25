@@ -70,7 +70,7 @@
       <span class="site-heading-upper text-primary mb-3"
         >Baranggay Offical Website</span
       >
-      <span class="site-heading-lower">ABOUT MASBATE CITY</span>
+      <span class="site-heading-lower">ABOUT MANLOT-OD</span>
     </h1>
 
     <section class="page-section">
@@ -94,7 +94,7 @@
           <div class="product-item-description d-flex mr-auto">
             <div class="bg-faded p-5 rounded">
               <p class="mb-0">
-                Masbate City is the capital of the province. It is located at
+                Manlot-od is a barangay of Masbate City. It is located at
                 the center of the Philippine archipelago between latitudes
                 11˚43’ north and 21˚35’ north, and between longitudes 123˚9’
                 east and 124˚15’ east, and about 212.5 aerial miles or 362

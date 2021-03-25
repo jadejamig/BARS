@@ -37,17 +37,17 @@
                 <p class="login-card-description"> Reservation - <?php echo "$mydate[month] $_GET[day], $mydate[year]" ?></p>
                 <form action="reservation_check.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="select_time">Select time schedule</label>
+                        <label for="select_time">Select Time Schedule</label>
                         <select class="form-control p-0 pl-4" id="select_time">
-                            <option selected>Select time</option>
+                            <option selected>Select time schedule</option>
                             <option value="1">9:00 am - 12:00 pm</option>
                             <option value="2">1:00 pm - 6:00 pm</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="select_office">Select office</label>
+                        <label for="select_office">Select Concern</label>
                         <select class="form-control p-0 pl-4" id="select_office">
-                            <option selected>Select office</option>
+                            <option selected>Select concern</option>
                             <option value="1">Barangay Clearance</option>
                             <option value="2">Certificate of Indigency</option>
                             <option value="3">Proof of Residency</option>
