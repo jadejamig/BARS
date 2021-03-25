@@ -65,7 +65,6 @@
               <th scope="col" class="day">Complete name</th>
               <th scope="col" class="day">Verification Photo</th>
               <th scope="col" class="day" colspan="2">Action</th>
-
             </tr>
           </thead>
           <tbody>

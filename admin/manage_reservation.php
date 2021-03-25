@@ -66,7 +66,7 @@
               <th scope="col" class="day">Complete Name</th>
               <th scope="col" class="day">Reservation Date</th>
               <th scope="col" class="day">Concern</th>
-              <th scope="col" class="day" >Action</th>
+              <th scope="col" class="day" colspan="2" >Action</th>
             </tr>
           </thead>
           <tbody>
