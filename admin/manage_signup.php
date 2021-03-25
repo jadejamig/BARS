@@ -48,7 +48,7 @@
               <a class="nav-link" href="manage_reservation.php">Manage Reservations</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sign out</a>
+              <a class="nav-link" href="../log_out.php">Sign out</a>
             </li>
           </ul>
         </div>
