@@ -204,11 +204,6 @@
                       echo "<p class=\"login-card-footer-error\">$message</p>";
                       unset($_SESSION['message']);
                     }
-                    if (isset($_SESSION['success'])){
-                      $message = $_SESSION['success'];
-                      echo "<p class=\"login-card-footer-success\">$message</p>";
-                      unset($_SESSION['success']);
-                    }
                   ?>
                 </form>
                 <p class="login-card-footer-text">
