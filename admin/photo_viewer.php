@@ -3,6 +3,7 @@
         $image = $_GET['image'];
 
         echo "<img src='../user img/".$image."'>";
+        echo $image;
     }
 
 ?>
@@ -21,6 +22,7 @@
         <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="../assets/css/photo_viewer.css" />
+        <link rel="icon" href="../img/bgy_logo.png">
   </head>
   <body>
     <!-- Navigation -->

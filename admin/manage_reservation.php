@@ -11,6 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link href="../assets/css/manage_reservation.css" rel="stylesheet" />
+    <link rel="icon" href="../img/bgy_logo.png">
   </head>
   <body>
     <!-- Navigation -->
@@ -62,8 +63,9 @@
             <tr>
               <th scope="col" class="day">Reservation ID</th>
               <th scope="col" class="day">User ID</th>
+              <th scope="col" class="day">Complete Name</th>
               <th scope="col" class="day">Reservation Date</th>
-              <th scope="col" class="day">Office</th>
+              <th scope="col" class="day">Concern</th>
               <th scope="col" class="day" >Action</th>
             </tr>
           </thead>
@@ -71,13 +73,13 @@
             <?php
 
               $users = array(
-                array("1", "1", "March 13, 2021", "Finance"),
-                array("2", "2", "March 22, 2021", "BIR"),
-                array("3", "3", "March 12, 2021", "LGU"),
-                array("4", "4", "March 2, 2021", "DILG"),
-                array("5", "5", "March 8, 2021", "DOST"),
-                array("6", "6", "March 15, 2021", "DepEd"),
-                array("7", "7", "TMarch 6, 2021", "Tourism")
+                array("1", "1", "Jose Dela Cruz", "March 13, 2021", "Barangay Clearance"),
+                array("2", "2","Cecilia Tiago", "March 22, 2021", "Certificate of Indigency"),
+                array("3", "3", "Bryan Reyes", "March 12, 2021", "Certificate of Residency"),
+                array("4", "4", "Juan Hugo", "March 2, 2021", "Barangay Business Permit"),
+                array("5", "5", "Albert Santos", "March 8, 2021", "Community Certificate"),
+                array("6", "6", "Martin Sanchez", "March 15, 2021", "Medical Mission"),
+                array("7", "7","Tina Moran", "TMarch 6, 2021", "Barangay Clearance")
               );
 
               $userCount = count($users);
@@ -85,14 +87,19 @@
               for ($i=0; $i<$userCount; $i++){
 
                 echo "<tr>";
-                  for ($j=0; $j<5; $j++){
+                  for ($j=0; $j<7; $j++){
 
-                    if ($j != 4){
+                    if ($j < 5){
                       ?>
                         <td scope="col"  class="day day-num b"><?php echo $users[$i][$j]; ?></td>
                       <?php
                     }
-                    else {
+                    elseif ($j == 5){
+                      ?>
+                        <td scope="col"  class="day day-num btn-success"><a href="#">Confirm</a></td>
+                      <?php
+                    }
+                    elseif ($j == 6){
                       ?>
                         <td scope="col"  class="day day-num btn-danger"><a href="#">Delete</a></td>
                       <?php

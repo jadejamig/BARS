@@ -23,6 +23,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link href="assets/css/reservation.css" rel="stylesheet" />
+    <link rel="icon" href="img/bgy_logo.png">
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Raleway"

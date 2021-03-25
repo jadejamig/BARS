@@ -11,6 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link href="assets/css/my_reservations.css" rel="stylesheet" />
+    <link rel="icon" href="img/bgy_logo.png">
   </head>
   <body>
     <!-- Navigation -->
@@ -65,7 +66,7 @@
             <tr>
               <th scope="col" class="day">Reservation ID</th>
               <th scope="col" class="day">Reservation Date</th>
-              <th scope="col" class="day">Office</th>
+              <th scope="col" class="day">Concern</th>
               <th scope="col" class="day" >Action</th>
             </tr>
           </thead>
@@ -73,13 +74,13 @@
             <?php
 
               $users = array(
-                array("1", "March 13, 2021", "Finance"),
-                array("2", "March 22, 2021", "BIR"),
-                array("3", "March 12, 2021", "LGU"),
-                array("4", "March 2, 2021", "DILG"),
-                array("5", "March 8, 2021", "DOST"),
-                array("6", "March 15, 2021", "DepEd"),
-                array("7", "TMarch 6, 2021", "Tourism")
+                array("1", "March 13, 2021", "Barangay Clearance"),
+                array("2", "March 22, 2021", "Certificate of Indigency"),
+                array("3", "March 12, 2021", "Certificate of Residency"),
+                array("4", "March 2, 2021", "Barangay Permit"),
+                array("5", "March 8, 2021", "Community Certificate"),
+                array("6", "March 15, 2021", "Medical Mission"),
+                array("7", "TMarch 6, 2021", "Building Permit Clearance")
               );
 
               $userCount = count($users);
