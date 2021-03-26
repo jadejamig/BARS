@@ -1,7 +1,11 @@
 <?php
-  session_start();
-  $_SESSION['month'] = date('n');
-  $_SESSION['year'] = date('Y');
+session_start();
+
+if (isset($_SESSION['month']) && isset($_SESSION['year']) ) {
+    unset($_SESSION['month']);
+    unset($_SESSION['year']);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

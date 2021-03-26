@@ -1,10 +1,12 @@
 <?php
   session_start();
-  echo $_SESSION['month'];
-
+  if (!isset($_SESSION['month']) || !isset($_SESSION['year']) ){
+    $_SESSION['month'] = date('n');
+    $_SESSION['year'] = date('Y');
+  }
+  
   if (isset($_POST['next'])){
     $_SESSION['month'] = $_SESSION['month'] + 1;
-    echo $_SESSION['month'];
   }
   
   $mydate=getdate(date("U"));
@@ -115,14 +117,14 @@
                         if ($day_count > $number_of_days){
                           break;
                         }
-                        
+
                         if ($day_count >= $day_today) {
                           ?>
                                 <td scope="col"  class="day day-num"><a href="reservation_schedule.php?day=<?php echo $day_count ?>"><?php echo $day_count?></a></td>
                           <?php
                         }
                         else {
-                          
+                          // && $_SESSION['month'] == date('n')
                           ?>
                                 <td scope="col"  class="day day-num bg-light"><a><?php echo $day_count?></a></td>
                           <?php
@@ -152,8 +154,3 @@
     </div>
   </body>
 </html>
-
-<?php
-
-
-?>
