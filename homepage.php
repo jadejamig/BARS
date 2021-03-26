@@ -1,3 +1,8 @@
+<?php
+  session_start();
+  $_SESSION['month'] = date('n');
+  $_SESSION['year'] = date('Y');
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

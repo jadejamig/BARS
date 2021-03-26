@@ -65,6 +65,7 @@
               <th scope="col" class="day">User ID</th>
               <th scope="col" class="day">Complete Name</th>
               <th scope="col" class="day">Reservation Date</th>
+              <th scope="col" class="day">Batch Time</th>
               <th scope="col" class="day">Concern</th>
               <th scope="col" class="day" colspan="2" >Action</th>
             </tr>
@@ -73,13 +74,13 @@
             <?php
 
               $users = array(
-                array("1", "1", "Jose Dela Cruz", "March 13, 2021", "Barangay Clearance"),
-                array("2", "2","Cecilia Tiago", "March 22, 2021", "Certificate of Indigency"),
-                array("3", "3", "Bryan Reyes", "March 12, 2021", "Certificate of Residency"),
-                array("4", "4", "Juan Hugo", "March 2, 2021", "Barangay Business Permit"),
-                array("5", "5", "Albert Santos", "March 8, 2021", "Community Certificate"),
-                array("6", "6", "Martin Sanchez", "March 15, 2021", "Medical Mission"),
-                array("7", "7","Tina Moran", "TMarch 6, 2021", "Barangay Clearance")
+                array("1", "1", "Jose Dela Cruz", "March 13, 2021","9:00 am - 12:00 pm", "Barangay Clearance"),
+                array("2", "2","Cecilia Tiago", "March 22, 2021", "1:00 pm - 6:00 pm", "Certificate of Indigency"),
+                array("3", "3", "Bryan Reyes", "March 12, 2021", "9:00 am - 12:00 pm", "Certificate of Residency"),
+                array("4", "4", "Juan Hugo", "March 2, 2021", "1:00 pm - 6:00 pm", "Barangay Business Permit"),
+                array("5", "5", "Albert Santos", "March 8, 2021", "9:00 am - 12:00 pm", "Community Certificate"),
+                array("6", "6", "Martin Sanchez", "March 15, 2021", "1:00 pm - 6:00 pm", "Medical Mission"),
+                array("7", "7","Tina Moran", "TMarch 6, 2021", "9:00 am - 12:00 pm", "Barangay Clearance")
               );
 
               $userCount = count($users);
@@ -87,19 +88,19 @@
               for ($i=0; $i<$userCount; $i++){
 
                 echo "<tr>";
-                  for ($j=0; $j<7; $j++){
+                  for ($j=0; $j<8; $j++){
 
-                    if ($j < 5){
+                    if ($j < 6){
                       ?>
                         <td scope="col"  class="day day-num b"><?php echo $users[$i][$j]; ?></td>
                       <?php
                     }
-                    elseif ($j == 5){
+                    elseif ($j == 6){
                       ?>
                         <td scope="col"  class="day day-num btn-success"><a href="#">Confirm</a></td>
                       <?php
                     }
-                    elseif ($j == 6){
+                    elseif ($j == 7){
                       ?>
                         <td scope="col"  class="day day-num btn-danger"><a href="#">Delete</a></td>
                       <?php

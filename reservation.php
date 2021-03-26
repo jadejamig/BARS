@@ -1,12 +1,18 @@
 <?php
+  session_start();
+  echo $_SESSION['month'];
+  
   $mydate=getdate(date("U"));
-  $month = (int)$mydate['mon'];
-  $year =  (int)$mydate['year'];
+  $month = $_SESSION['month'];
+  $year =  $_SESSION['year'];
   $number_of_days = cal_days_in_month(CAL_GREGORIAN, $month , $year);
   $first_day_name = strtolower(date('D', strtotime("1-$month-$year")));
   $day_reference = array("sun"=>0, "mon"=>1, "tue"=>2, "wed"=>3, "thu"=>4, "fri"=>5, "sat"=>6);
+  $month_reference = array(1=>"January", 2=>"February", 3=>"March", 4=>"April", 5=>"May", 6=>"June", 7=>"July",
+                           8=>"August", 9=>"September", 10=>"October", 11=>"November", 12=>"December");
   $calendar_start = $day_reference[$first_day_name]; 
 
+  $day_today = date('j');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +79,7 @@
     <div class="container-fluid padding calendar">
       <div class="row">
         <div class="col-11 heading-text">
-          <h3><?php echo "$mydate[month] $mydate[year]"?></h3>
+          <h3><?php echo "$month_reference[$month] $mydate[year]"?></h3>
         </div>
       </div>
       <div class="row heading">
@@ -92,7 +98,7 @@
           <?php 
             $start = false;
             $day_count = 1;
-            for ($i=0; $i<5; $i++){
+            for ($i=0; $i<6; $i++){
               echo "<tr>";
                 for ($j=0; $j<7; $j++){
 
@@ -104,14 +110,23 @@
                         if ($day_count > $number_of_days){
                           break;
                         }
-                        ?>
-                              <td scope="col"  class="day day-num"><a href="reservation_schedule.php?day=<?php echo $day_count ?>"><?php echo $day_count?></a></td>
-                        <?php
+                        
+                        if ($day_count >= $day_today) {
+                          ?>
+                                <td scope="col"  class="day day-num"><a href="reservation_schedule.php?day=<?php echo $day_count ?>"><?php echo $day_count?></a></td>
+                          <?php
+                        }
+                        else {
+                          
+                          ?>
+                                <td scope="col"  class="day day-num bg-light"><a><?php echo $day_count?></a></td>
+                          <?php
+                        }
                         // echo "<a href=\"#\"> <td scope=\"col\"  class=\"day day-num\">$day_count</td> </a>";
                         $day_count += 1;
                       }
                       else{
-                        echo "<td scope=\"col\" class=\"day day-num\"></td>";
+                        echo "<td scope=\"col\" class=\"day day-num bg-light \"></td>";
                       }
                       
                 }
@@ -121,6 +136,22 @@
           ?>
         </table>
       </div>
+      <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
+          <input
+              name="next"
+              class="btn btn-block login-btn mb-4"
+              type="submit"
+              value="Next"
+            />
+        </form>
     </div>
   </body>
 </html>
+
+<?php
+
+if (isset($_POST['next'])){
+    $_SESSION['month'] = $_SESSION['month'] + 1;
+    echo $_SESSION['month'];
+}
+?>

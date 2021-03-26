@@ -66,6 +66,7 @@
             <tr>
               <th scope="col" class="day">Reservation ID</th>
               <th scope="col" class="day">Reservation Date</th>
+              <th scope="col" class="day">Batch Time</th>
               <th scope="col" class="day">Concern</th>
               <th scope="col" class="day" >Action</th>
             </tr>
@@ -74,13 +75,13 @@
             <?php
 
               $users = array(
-                array("1", "March 13, 2021", "Barangay Clearance"),
-                array("2", "March 22, 2021", "Certificate of Indigency"),
-                array("3", "March 12, 2021", "Certificate of Residency"),
-                array("4", "March 2, 2021", "Barangay Permit"),
-                array("5", "March 8, 2021", "Community Certificate"),
-                array("6", "March 15, 2021", "Medical Mission"),
-                array("7", "TMarch 6, 2021", "Building Permit Clearance")
+                array("1", "March 13, 2021","9:00 am - 12:00 pm", "Barangay Clearance"),
+                array("2", "March 22, 2021","1:00 pm - 6:00 pm", "Certificate of Indigency"),
+                array("3", "March 12, 2021","9:00 am - 12:00 pm", "Certificate of Residency"),
+                array("4", "March 2, 2021","1:00 pm - 6:00 pm", "Barangay Permit"),
+                array("5", "March 8, 2021","9:00 am - 12:00 pm", "Community Certificate"),
+                array("6", "March 15, 2021","1:00 pm - 6:00 pm", "Medical Mission"),
+                array("7", "TMarch 6, 2021","9:00 am - 12:00 pm", "Building Permit Clearance")
               );
 
               $userCount = count($users);
@@ -88,9 +89,9 @@
               for ($i=0; $i<$userCount; $i++){
 
                 echo "<tr>";
-                  for ($j=0; $j<4; $j++){
+                  for ($j=0; $j<5; $j++){
 
-                    if ($j != 3){
+                    if ($j != 4){
                       ?>
                         <td scope="col"  class="day day-num b"><?php echo $users[$i][$j]; ?></td>
                       <?php
