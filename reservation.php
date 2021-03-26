@@ -1,6 +1,11 @@
 <?php
   session_start();
   echo $_SESSION['month'];
+
+  if (isset($_POST['next'])){
+    $_SESSION['month'] = $_SESSION['month'] + 1;
+    echo $_SESSION['month'];
+  }
   
   $mydate=getdate(date("U"));
   $month = $_SESSION['month'];
@@ -150,8 +155,5 @@
 
 <?php
 
-if (isset($_POST['next'])){
-    $_SESSION['month'] = $_SESSION['month'] + 1;
-    echo $_SESSION['month'];
-}
+
 ?>
