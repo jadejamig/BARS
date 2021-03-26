@@ -6,7 +6,9 @@
   }
   
   if (isset($_POST['next'])){
-    $_SESSION['month'] = $_SESSION['month'] + 1;
+    if ($_SESSION['month'] != 12){
+      $_SESSION['month'] = $_SESSION['month'] + 1;
+    }
   }
   
   $mydate=getdate(date("U"));
@@ -83,12 +85,23 @@
     </nav>
 
   <!-- CALENDAR SECTION -->
-    <div class="container-fluid padding calendar">
+    <div class="container-fluid padding calendar ">
       <div class="row">
-        <div class="col-11 heading-text">
-          <h3><?php echo "$month_reference[$month] $mydate[year]"?></h3>
-        </div>
+          <div class="col-4 toggle-month-left">
+                <a href="javascript:history.back()">
+                    <i class="fas fa-angle-left"></i>
+                </a>
+          </div>
+          <div class="col-4 heading-text">
+              <h3 class="col-5"><?php echo "$month_reference[$month] $mydate[year]"?></h3>
+          </div>
+          <div class="col-4 toggle-month-right">
+                <a href="javascript:history.back()">
+                    <i class="fas fa-angle-right"></i>
+                </a>
+          </div>
       </div>
+      
       <div class="row heading">
         <table class="table table-bordered text-center">
           <thead>

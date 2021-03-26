@@ -31,9 +31,6 @@ footer .img-fluid {
   padding: 1rem;
 }
 
-/* .table-responsive-sm {
-  width: 100%;
-} */
 .calendar {
   margin-top: 20px;
 }
@@ -85,7 +82,24 @@ table.table-bordered > tbody > tr > td:nth-child(1) {
 .day {
   max-width: 15px;
 }
-
+.toggle-month-left {
+  margin: auto;
+  text-align: end;
+}
+.toggle-month-right {
+  margin: auto;
+  text-align: start;
+}
+.fa-angle-left {
+  font-size: 3em;
+  color: #000 !important;
+  padding-bottom: 10px;
+}
+.fa-angle-right {
+  font-size: 3em;
+  color: #000 !important;
+  padding-bottom: 10px;
+}
 @media (max-width: 1500px) {
   .day-num {
     height: 10rem;
