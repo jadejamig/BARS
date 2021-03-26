@@ -1,9 +1,6 @@
 <?php
     if(isset($_GET['image'])){
         $image = $_GET['image'];
-
-        echo "<img src='../user img/".$image."'>";
-        echo $image;
     }
 
 ?>
@@ -35,15 +32,11 @@
         </div>
 
         <div class="card login-card">
-            <img src="../user img/cardsample.jpeg" alt="login" class="img-fluid" />
+            <img src="../user img/<?php echo $image;?>" alt="login" class="img-fluid" />
         </div>
       </div>
     </main>
   </body>
 
 </html>
-
-
-
-
 
