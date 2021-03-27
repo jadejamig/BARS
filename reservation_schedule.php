@@ -1,6 +1,14 @@
 <?php
+  session_start();
+  date_default_timezone_set("Asia/Manila");
+
   $mydate=getdate(date("U"));
+  $day = $_GET['day'];
+  $month = $_GET['month'];
+  $year = $_SESSION['year'];
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,30 +42,37 @@
           <div class="row no-gutters">
             <div class="col-md-12">
               <div class="card-body">
-                <p class="login-card-description"> Reservation - <?php echo "$mydate[month] $_GET[day], $mydate[year]" ?></p>
-                <form action="reservation_check.php" method="POST" enctype="multipart/form-data">
+                <p class="login-card-description"> Reservation - <?php echo "$month $day, $year" ?></p>
+                <form action="insert_reservation.php?month=<?php echo $month;?>&day=<?php echo $day;?>" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="select_time">Select Time Schedule</label>
-                        <select class="form-control p-0 pl-4" id="select_time">
-                            <option selected>Select time schedule</option>
-                            <option value="1">9:00 am - 12:00 pm</option>
-                            <option value="2">1:00 pm - 6:00 pm</option>
+                        <select class="form-control p-0 pl-4" name="time_sched" id="select_time">
+                            <option disabled selected hidden>Select time schedule</option>
+                            <option value="9:00 am - 12:00 pm">9:00 am - 12:00 pm</option>
+                            <option value="1:00 pm - 6:00 pm">1:00 pm - 6:00 pm</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="select_office">Select Concern</label>
-                        <select class="form-control p-0 pl-4" id="select_office">
-                            <option selected>Select concern</option>
-                            <option value="1">Barangay Clearance</option>
-                            <option value="2">Certificate of Indigency</option>
-                            <option value="3">Proof of Residency</option>
-                            <option value="4">Barangay Permit</option>
-                            <option value="5">Community Certificate</option>  
-                            <option value="5">Medical Mission</option>  
-                            <option value="5">Barangay ID</option>  
-                            <option value="5">Building Permit</option>  
-                            <option value="5">Census</option>  
+                        <select class="form-control p-0 pl-4" name="concern" id="select_office">
+                            <option disabled selected hidden>Select concern</option>
+                            <option value="Barangay Clearance">Barangay Clearance</option>
+                            <option value="Certificate of Indigency">Certificate of Indigency</option>
+                            <option value="Proof of Residency">Proof of Residency</option>
+                            <option value="Barangay Permit">Barangay Permit</option>
+                            <option value="Community Certificate">Community Certificate</option>  
+                            <option value="Medical Mission">Medical Mission</option>  
+                            <option value="Barangay ID">Barangay ID</option>  
+                            <option value="Building Permit">Building Permit</option>  
+                            <option value="Census">Census</option>  
                         </select>
+                        <?php
+                          if (isset($_SESSION['reservationError'])){
+                            $message = $_SESSION['reservationError'];
+                            echo "<p style='color: red;'>$message</p>";
+                            unset($_SESSION['reservationError']);
+                          }
+                        ?>
                     </div>
                     <input
                         name="submit_reservation"

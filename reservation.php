@@ -1,5 +1,7 @@
 <?php
   session_start();
+  date_default_timezone_set("Asia/Manila");
+  
   if (!isset($_SESSION['month']) || !isset($_SESSION['year']) ){
     $_SESSION['month'] = date('n');
     $_SESSION['year'] = date('Y');
@@ -9,8 +11,13 @@
     if ($_SESSION['month'] != 12){
       $_SESSION['month'] = $_SESSION['month'] + 1;
     }
+    else if($_SESSION['month'] >= 12){
+      $_SESSION['month'] = 1;
+      $_SESSION['year'] =  $_SESSION['year'] + 1;
+    }
   }
   
+
   $mydate=getdate(date("U"));
   $month = $_SESSION['month'];
   $year =  $_SESSION['year'];
@@ -22,6 +29,8 @@
   $calendar_start = $day_reference[$first_day_name]; 
 
   $day_today = date('j');
+  $month_today = date('m');
+  $year_today = date('Y');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -93,7 +102,7 @@
                 </a>
           </div>
           <div class="col-4 heading-text">
-              <h3 class="col-5"><?php echo "$month_reference[$month] $mydate[year]"?></h3>
+              <h3 class="col-5"><?php echo "$month_reference[$month] $year"?></h3>
           </div>
           <div class="col-4 toggle-month-right">
                 <a href="javascript:history.back()">
@@ -131,10 +140,12 @@
                           break;
                         }
 
-                        if ($day_count < $day_today && $_SESSION['month'] == date('n')) {
+                        if($month_today < $month || $year_today < $year){
+                          echo "<td scope=\"col\"  class=\"day day-num\"><a href=\"reservation_schedule.php?month=$month_reference[$month]&day=$day_count\">$day_count</a></td>";
+                        }
+                        else if ($day_count > $day_today) {
                           ?>
-                                
-                                <td scope="col"  class="day day-num bg-light"><a><?php echo $day_count?></a></td>
+                            <td scope="col"  class="day day-num"><a href="reservation_schedule.php?month=<?php echo $month_reference[$month];?>&day=<?php echo $day_count ?>"><?php echo $day_count?></a></td>
                           <?php
                         }
                         else {
@@ -148,7 +159,7 @@
                         $day_count += 1;
                       }
                       else{
-                        echo "<td scope=\"col\" class=\"day day-num bg-light \"></td>";
+                        echo "<td scope=\"col\" class=\"\"></td>";
                       }
                       
                 }
@@ -169,3 +180,4 @@
     </div>
   </body>
 </html>
+

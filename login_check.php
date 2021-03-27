@@ -30,6 +30,7 @@ if (isset($_POST['login'])){
       
       $row = mysqli_fetch_array($result);
       $_SESSION['login'] = true;
+      $_SESSION['user_id'] = $row['user_id'];
       $_SESSION['username'] = $row['username'];
       $_SESSION['usertype'] = $row['user_admin'];
       $_SESSION['verified'] = $row['verified_user'];
