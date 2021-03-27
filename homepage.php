@@ -1,12 +1,3 @@
-<?php
-session_start();
-
-if (isset($_SESSION['month']) && isset($_SESSION['year']) ) {
-    unset($_SESSION['month']);
-    unset($_SESSION['year']);
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
