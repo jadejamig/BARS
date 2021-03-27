@@ -131,15 +131,17 @@
                           break;
                         }
 
-                        if ($day_count >= $day_today) {
+                        if ($day_count < $day_today && $_SESSION['month'] == date('n')) {
                           ?>
-                                <td scope="col"  class="day day-num"><a href="reservation_schedule.php?day=<?php echo $day_count ?>"><?php echo $day_count?></a></td>
+                                
+                                <td scope="col"  class="day day-num bg-light"><a><?php echo $day_count?></a></td>
                           <?php
                         }
                         else {
-                          // && $_SESSION['month'] == date('n')
+                          // if $_SESSION['month'] == date('n')
                           ?>
-                                <td scope="col"  class="day day-num bg-light"><a><?php echo $day_count?></a></td>
+                                <!-- <td scope="col"  class="day day-num bg-light"><a><?php echo $day_count?></a></td> -->
+                                <td scope="col"  class="day day-num"><a href="reservation_schedule.php?day=<?php echo $day_count ?>"><?php echo $day_count?></a></td>
                           <?php
                         }
                         // echo "<a href=\"#\"> <td scope=\"col\"  class=\"day day-num\">$day_count</td> </a>";
