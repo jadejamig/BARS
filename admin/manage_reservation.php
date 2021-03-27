@@ -73,43 +73,30 @@
           <tbody>
             <?php
 
-              $users = array(
-                array("1", "1", "Jose Dela Cruz", "March 13, 2021","9:00 am - 12:00 pm", "Barangay Clearance"),
-                array("2", "2","Cecilia Tiago", "March 22, 2021", "1:00 pm - 6:00 pm", "Certificate of Indigency"),
-                array("3", "3", "Bryan Reyes", "March 12, 2021", "9:00 am - 12:00 pm", "Certificate of Residency"),
-                array("4", "4", "Juan Hugo", "March 2, 2021", "1:00 pm - 6:00 pm", "Barangay Business Permit"),
-                array("5", "5", "Albert Santos", "March 8, 2021", "9:00 am - 12:00 pm", "Community Certificate"),
-                array("6", "6", "Martin Sanchez", "March 15, 2021", "1:00 pm - 6:00 pm", "Medical Mission"),
-                array("7", "7","Tina Moran", "TMarch 6, 2021", "9:00 am - 12:00 pm", "Barangay Clearance")
-              );
+              include '../connection.php';
 
-              $userCount = count($users);
+              $query = "SELECT reservations.reservation_id as reservation_id, reservations.user_id as user_id, concat(user.first_name,' ',user.last_name) as complete_name
+                        ,reservations.reservation_date as reservation_date,reservations.batch_time as batch_time,reservations.concern as concern 
+                        FROM reservations, user 
+                        WHERE reservations.user_id = user.user_id AND reservations.complete = 0
+                        ORDER BY reservations.reservation_date ASC, reservations.batch_time ASC, reservations.time_reserved ASC";
+              
+              $result = mysqli_query($conn,$query);
 
-              for ($i=0; $i<$userCount; $i++){
-
-                echo "<tr>";
-                  for ($j=0; $j<8; $j++){
-
-                    if ($j < 6){
-                      ?>
-                        <td scope="col"  class="day day-num b"><?php echo $users[$i][$j]; ?></td>
-                      <?php
-                    }
-                    elseif ($j == 6){
-                      ?>
-                        <td scope="col"  class="day day-num btn-success"><a href="#">Confirm</a></td>
-                      <?php
-                    }
-                    elseif ($j == 7){
-                      ?>
-                        <td scope="col"  class="day day-num btn-danger"><a href="#">Delete</a></td>
-                      <?php
-                    }
-
-                  }
-                echo "</tr>";
-              }
-
+              if($result){
+                while($row = mysqli_fetch_array($result)){
+                  echo "<tr>";
+                  echo "<td scope=\"col\"  class=\"day day-num b\">".$row['reservation_id']."</td>";
+                  echo "<td scope=\"col\"  class=\"day day-num b\">".$row['user_id']."</td>";
+                  echo "<td scope=\"col\"  class=\"day day-num b\">".$row['complete_name']."</td>";
+                  echo "<td scope=\"col\"  class=\"day day-num b\">".$row['reservation_date']."</td>";
+                  echo "<td scope=\"col\"  class=\"day day-num b\">".$row['batch_time']."</td>";
+                  echo "<td scope=\"col\"  class=\"day day-num b\">".$row['concern']."</td>";
+                  echo "<td scope=\"col\"  class=\"day day-num btn-success\"><a href='reservation_action.php?id=".$row['user_id']."&rid=".$row['reservation_id']."&action=accept'>Confirm</a></td>";
+                  echo "<td scope=\"col\"  class=\"day day-num btn-danger\"><a href='reservation_action.php?id=".$row['user_id']."&rid=".$row['reservation_id']."&action=remove'>Remove</a></td>";
+                  echo "</tr>";
+                }
+              }   
             ?>
           </tbody>
         </table>
