@@ -201,3 +201,7 @@
   </body>
 </html>
 
+<?php
+  unset($_SESSION['month']);
+?>
+
