@@ -11,10 +11,20 @@
     if ($_SESSION['month'] != 12){
       $_SESSION['month'] = $_SESSION['month'] + 1;
     }
-    else if($_SESSION['month'] >= 12){
-      $_SESSION['month'] = 1;
-      $_SESSION['year'] =  $_SESSION['year'] + 1;
+    // else if($_SESSION['month'] >= 12){
+    //   $_SESSION['month'] = 1;
+    //   $_SESSION['year'] =  $_SESSION['year'] + 1;
+    // }
+  }
+
+  elseif (isset($_POST['back'])){
+    if ($_SESSION['month'] != 1){
+      $_SESSION['month'] = $_SESSION['month'] - 1;
     }
+    // else if($_SESSION['month'] <= 12){
+    //   $_SESSION['month'] = 1;
+    //   $_SESSION['year'] =  $_SESSION['year'] - 1;
+    // }
   }
   
 
@@ -94,20 +104,24 @@
     </nav>
 
   <!-- CALENDAR SECTION -->
-    <div class="container-fluid padding calendar ">
+    <div class="container-fluid padding calendar">
       <div class="row">
-          <div class="col-4 toggle-month-left">
-                <a href="javascript:history.back()">
+          <div class="col-4 toggle-month-left ">
+                <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
+                  <button name="back" class="btn next-btn bg-transparent" type="submit" value="">
                     <i class="fas fa-angle-left"></i>
-                </a>
+                  </button>
+                </form>
           </div>
-          <div class="col-4 heading-text">
-              <h3 class="col-5"><?php echo "$month_reference[$month] $year"?></h3>
+          <div class="col-4 text-center heading-text pr-4">
+              <h3> <?php echo "$month_reference[$month] $year"?></h3>
           </div>
           <div class="col-4 toggle-month-right">
-                <a href="javascript:history.back()">
+                <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
+                  <button name="next" class="btn next-btn bg-transparent" type="submit" value="">
                     <i class="fas fa-angle-right"></i>
-                </a>
+                  </button>
+                </form>
           </div>
       </div>
       
@@ -134,29 +148,33 @@
                       if ($i==0 && $j==$calendar_start){
                         $start = true;
                       }
+
                       if ($start){
 
-                        if ($day_count > $number_of_days){
-                          break;
-                        }
-
-                        if($month_today < $month || $year_today < $year){
-                          echo "<td scope=\"col\"  class=\"day day-num\"><a href=\"reservation_schedule.php?month=$month_reference[$month]&day=$day_count\">$day_count</a></td>";
-                        }
-                        else if ($day_count > $day_today) {
-                          ?>
-                            <td scope="col"  class="day day-num"><a href="reservation_schedule.php?month=<?php echo $month_reference[$month];?>&day=<?php echo $day_count ?>"><?php echo $day_count?></a></td>
-                          <?php
-                        }
-                        else {
-                          ?>
-                                <td scope="col"  class="day day-num"><a href="reservation_schedule.php?day=<?php echo $day_count ?>"><?php echo $day_count?></a></td>
-                          <?php
-                        }
-                        $day_count += 1;
+                          if ($day_count > $number_of_days){
+                            break;
+                          }
+                          if( $month > $month_today){
+                            ?>
+                              <td scope="col"  class="day day-num"><a href="reservation_schedule.php?month=<?php echo $month_reference[$month];?>&day=<?php echo $day_count ?>"><?php echo $day_count?></a></td>
+                            <?php
+                          }
+                          else if ($day_count >= $day_today && $month == $month_today) {
+                            ?>
+                              <td scope="col"  class="day day-num"><a href="reservation_schedule.php?month=<?php echo $month_reference[$month];?>&day=<?php echo $day_count ?>"><?php echo $day_count?></a></td>
+                            <?php
+                          }
+                          else {
+                            ?>
+                                <td scope="col"  class="day day-num bg-light"><a><?php echo $day_count?></a></td>
+                            <?php
+                          }
+                          $day_count += 1;
                       }
                       else{
-                        echo "<td scope=\"col\" class=\"\"></td>";
+                          ?>
+                            <td scope="col"  class="day day-num bg-light"></td>
+                          <?php
                       }
                       
                 }
@@ -166,14 +184,6 @@
           ?>
         </table>
       </div>
-      <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
-          <input
-              name="next"
-              class="btn btn-block login-btn mb-4"
-              type="submit"
-              value="Next"
-            />
-        </form>
     </div>
   </body>
 </html>

@@ -93,12 +93,13 @@ table.table-bordered > tbody > tr > td:nth-child(1) {
 .fa-angle-left {
   font-size: 3em;
   color: #000 !important;
-  padding-bottom: 10px;
 }
 .fa-angle-right {
   font-size: 3em;
   color: #000 !important;
-  padding-bottom: 10px;
+}
+.next-button {
+  background-color: transparent !important;
 }
 @media (max-width: 1500px) {
   .day-num {
