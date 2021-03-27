@@ -73,39 +73,31 @@
           </thead>
           <tbody>
             <?php
+              session_start();
+              $user_id = $_SESSION['user_id'];
 
-              $users = array(
-                array("1", "March 13, 2021","9:00 am - 12:00 pm", "Barangay Clearance"),
-                array("2", "March 22, 2021","1:00 pm - 6:00 pm", "Certificate of Indigency"),
-                array("3", "March 12, 2021","9:00 am - 12:00 pm", "Certificate of Residency"),
-                array("4", "March 2, 2021","1:00 pm - 6:00 pm", "Barangay Permit"),
-                array("5", "March 8, 2021","9:00 am - 12:00 pm", "Community Certificate"),
-                array("6", "March 15, 2021","1:00 pm - 6:00 pm", "Medical Mission"),
-                array("7", "TMarch 6, 2021","9:00 am - 12:00 pm", "Building Permit Clearance")
-              );
+              include 'connection.php';
 
-              $userCount = count($users);
+              $select = "SELECT * FROM reservations WHERE user_id = '$user_id'";
+              $result = mysqli_query($conn,$select);
 
-              for ($i=0; $i<$userCount; $i++){
-
-                echo "<tr>";
-                  for ($j=0; $j<5; $j++){
-
-                    if ($j != 4){
-                      ?>
-                        <td scope="col"  class="day day-num b"><?php echo $users[$i][$j]; ?></td>
-                      <?php
-                    }
-                    else {
-                      ?>
-                        <td scope="col"  class="day day-num btn-danger"><a href="#">Delete</a></td>
-                      <?php
-                    }
-
+              if($result){
+                while($row = mysqli_fetch_array($result)){
+                  echo "<tr>";
+                  echo "<td scope=\"col\"  class=\"day day-num b\">".$row['reservation_id']."</td>"; 
+                  echo "<td scope=\"col\"  class=\"day day-num b\">".$row['reservation_date']."</td>";
+                  echo "<td scope=\"col\"  class=\"day day-num b\">".$row['batch_time']."</td>";
+                  echo "<td scope=\"col\"  class=\"day day-num b\">".$row['concern']."</td>";
+                  
+                  if($row['complete'] == 0){
+                    echo "<td scope=\"col\"  class=\"day day-num btn-danger\"><a href='user_reservation_action.php?id=".$row['user_id']."&rid=".$row['reservation_id']."'>Remove</a></td>";
                   }
-                echo "</tr>";
-              }
-
+                  else{
+                    echo "<td scope=\"col\"  class=\"\"></td>";
+                  }
+                  echo "</tr>";
+                }
+              }   
             ?>
           </tbody>
         </table>

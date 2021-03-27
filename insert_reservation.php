@@ -24,7 +24,7 @@
         $batchTime = $_POST['time_sched'];
         $concern = $_POST['concern'];
         $userid = $_SESSION['user_id'];
-        $time_reserved = date("h:i:s a");
+        $time_reserved = date("H:i:s");
 
         $check = "SELECT * FROM reservations WHERE user_id = '$userid' AND reservation_date = '$formattedDate' AND batch_time = '$batchTime'";
         $result = mysqli_query($conn,$check);
