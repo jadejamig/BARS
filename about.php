@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,18 +54,27 @@
             <li class="nav-item">
               <a class="nav-link" href="about.php">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="reservation.php">Reservation</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="my_reservations.php">My Reservations</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.php">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="sign_up.php">Sign up</a>
-            </li>
+            <?php
+              if(isset($_SESSION['login'])){
+                echo "<li class=\"nav-item\">
+                  <a class=\"nav-link\" href=\"reservation.php\">Reservation</a>
+                </li>
+                <li class=\"nav-item\">
+                  <a class=\"nav-link\" href=\"my_reservations.php\">My Reservations</a>
+                </li>
+                <li class=\"nav-item\">
+                  <a class=\"nav-link\" href=\"log_out.php\">Sign out</a>
+                </li>";
+              }
+              else{
+                echo "<li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"login.php\">Login</a>
+                      </li>
+                      <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"sign_up.php\">Sign up</a>
+                      </li>";
+              }
+            ?>
           </ul>
         </div>
       </div>
