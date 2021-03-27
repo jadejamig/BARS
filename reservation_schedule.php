@@ -1,7 +1,7 @@
 <?php
   session_start();
   date_default_timezone_set("Asia/Manila");
-  
+
   $mydate=getdate(date("U"));
   $day = $_GET['day'];
   $month = $_GET['month'];
@@ -48,29 +48,29 @@
                         <label for="select_time">Select Time Schedule</label>
                         <select class="form-control p-0 pl-4" name="time_sched" id="select_time">
                             <option disabled selected hidden>Select time schedule</option>
-                            <option value="1">9:00 am - 12:00 pm</option>
-                            <option value="2">1:00 pm - 6:00 pm</option>
+                            <option value="9:00 am - 12:00 pm">9:00 am - 12:00 pm</option>
+                            <option value="1:00 pm - 6:00 pm">1:00 pm - 6:00 pm</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="select_office">Select Concern</label>
                         <select class="form-control p-0 pl-4" name="concern" id="select_office">
                             <option disabled selected hidden>Select concern</option>
-                            <option value="1">Barangay Clearance</option>
-                            <option value="2">Certificate of Indigency</option>
-                            <option value="3">Proof of Residency</option>
-                            <option value="4">Barangay Permit</option>
-                            <option value="5">Community Certificate</option>  
-                            <option value="5">Medical Mission</option>  
-                            <option value="5">Barangay ID</option>  
-                            <option value="5">Building Permit</option>  
-                            <option value="5">Census</option>  
+                            <option value="Barangay Clearance">Barangay Clearance</option>
+                            <option value="Certificate of Indigency">Certificate of Indigency</option>
+                            <option value="Proof of Residency">Proof of Residency</option>
+                            <option value="Barangay Permit">Barangay Permit</option>
+                            <option value="Community Certificate">Community Certificate</option>  
+                            <option value="Medical Mission">Medical Mission</option>  
+                            <option value="Barangay ID">Barangay ID</option>  
+                            <option value="Building Permit">Building Permit</option>  
+                            <option value="Census">Census</option>  
                         </select>
                         <?php
-                          if (isset($_SESSION['emptyError'])){
-                            $message = $_SESSION['emptyError'];
+                          if (isset($_SESSION['reservationError'])){
+                            $message = $_SESSION['reservationError'];
                             echo "<p style='color: red;'>$message</p>";
-                            unset($_SESSION['emptyError']);
+                            unset($_SESSION['reservationError']);
                           }
                         ?>
                     </div>
