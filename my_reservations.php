@@ -71,11 +71,30 @@
         </div>
       </div>
     </nav>
-
+    
+    <!-- SEARCH SECTION -->
+    <div class="search-section container-fluid pl-0">
+                <form class="form-inline" method="post">
+                      <input
+                        type="text"
+                        name="searchkey"
+                        class="form-control mb-2 mr-2"
+                        placeholder="Search"
+                      />
+                      
+                    <input
+                      name="search"
+                      class="btn btn-block login-btn mb-2"
+                      type="submit"
+                      value="Search"
+                    />
+                </form>
+        </div>
+        
     <!-- CALENDAR SECTION -->
     <div class="container-fluid padding calendar">
       <div class="row">
-        <div class="col-11 heading-text">
+        <div class="col-11 heading-text mt-0 pt-0">
           <h3>My Reservations</h3>
         </div>
       </div>

@@ -44,6 +44,7 @@ if (isset($_POST['login'])){
         header("location: login.php");
       }
       else{
+        $_SESSION['login'] = true;
         header("location: homepage.php");
       }
     }

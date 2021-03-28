@@ -64,6 +64,27 @@
       </div>
     </nav>
 
+    
+    <!-- SEARCH SECTION -->
+    <div class="search-section container-fluid">
+                <form class="form-inline" method="post">
+                      <input
+                        type="text"
+                        name="searchkey"
+                        class="form-control mb-2 mr-2"
+                        placeholder="Search"
+                      />
+                      
+                    <input
+                      name="search"
+                      class="btn btn-block login-btn mb-2"
+                      type="submit"
+                      value="Search"
+                    />
+                </form>
+        </div>
+
+        
     <!-- CALENDAR SECTION -->
     <div class="container-fluid padding calendar">
       <div class="row heading">

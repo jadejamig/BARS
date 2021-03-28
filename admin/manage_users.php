@@ -65,8 +65,7 @@
     </nav>
 
     <!-- SEARCH SECTION -->
-    <div class="container-fluid padding">
-        <div class="search-section">
+        <div class="search-section container-fluid">
                 <form class="form-inline" method="post">
                       <input
                         type="text"
@@ -83,7 +82,6 @@
                     />
                 </form>
         </div>
-    </div>
 
     <!-- CALENDAR SECTION -->
     <div class="container-fluid padding calendar">
@@ -106,9 +104,13 @@
             $user_id = $_SESSION['user_id'];
 
             if (isset($_POST['search'])){
-              $query = "SELECT * from user WHERE verified_user = 1 AND user_id like '$_POST[searchkey]'";
-            } 
-            
+                if (trim($_POST['searchkey']) == ""){
+                  $query = "SELECT * from user WHERE verified_user = 1 AND user_id <> '$user_id'";
+                }
+                else {
+                  $query = "SELECT * from user WHERE verified_user = 1 AND user_id like '$_POST[searchkey]'";
+                } 
+            }
             else{
               $query = "SELECT * from user WHERE verified_user = 1 AND user_id <> '$user_id'";
             }
