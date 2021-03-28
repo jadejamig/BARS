@@ -75,14 +75,10 @@
         <div class="carousel-item active">
           <img src="../img/outreach2.png" alt="" />
           <div class="carousel-caption">
-            <!-- <h1 class="display-2">Outreach Programs</h1> -->
             <h3>OUTREACH PROGRAMS</h3>
             <button type="button" class="btn btn-outline-light btn-lg">
               Learn more
             </button>
-            <!-- <button type="button" class="btn btn-primary btn-lg">
-              Learn More
-            </button> -->
           </div>
         </div>
         <div class="carousel-item">
@@ -156,7 +152,32 @@
         </div>
       </div>
     </div>
+    <!-- SERVICES SECTION -->
+    <div class="container-fluid padding">
+      <div class="row text-center">
+        <div class="col-xs-12 col-sm-6 services p-5">
+          <i class="far fa-credit-card"></i>          
+          <h3>Taxes & Fees</h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima porro, optio nam eum dolorum quae dolor officia, nobis distinctio nesciunt fugit deleniti enim. Necessitatibus eum rem quidem molestias adipisci enim.</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 services p-5">
+          <i class="far fa-handshake"></i>
+          <h3>Social Services</h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima porro, optio nam eum dolorum quae dolor officia, nobis distinctio nesciunt fugit deleniti enim. Necessitatibus eum rem quidem molestias adipisci enim.</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 services p-5">
+          <i class="fas fa-balance-scale"></i>
+          <h3>Legal Services</h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima porro, optio nam eum dolorum quae dolor officia, nobis distinctio nesciunt fugit deleniti enim. Necessitatibus eum rem quidem molestias adipisci enim.</p>
 
+        </div>
+        <div class="col-xs-12 col-sm-6 services p-5">
+          <i class="fas fa-heartbeat"></i>
+          <h3>Health Services</h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima porro, optio nam eum dolorum quae dolor officia, nobis distinctio nesciunt fugit deleniti enim. Necessitatibus eum rem quidem molestias adipisci enim.</p>
+        </div>
+      </div>
+    </div>
     <!--- Footer -->
     <footer>
       <div class="container-fluid padding text-center">

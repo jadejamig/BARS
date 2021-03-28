@@ -77,7 +77,6 @@
                     value="Login"
                   />
                 </form>
-                <a href="#!" class="forgot-password-link">Forgot password?</a>
                 <p class="login-card-footer-text">
                   Don't have an account?
                   <a href="sign_up.php" class="text-reset">Register here</a>

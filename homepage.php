@@ -178,7 +178,7 @@
         <div class="col-xs-12 col-sm-6 services p-5">
           <i class="far fa-credit-card"></i>          
           <h3>Taxes & Fees</h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima porro, optio nam eum dolorum quae dolor officia, nobis distinctio nesciunt fugit deleniti enim. Necessitatibus eum rem quidem molestias adipisci enim.</p>
+          <p>The organization of the barangay treasury is based on the normal staffing pattern of most local government agencies and departments. The business function and authority of the barangay treasurer to collect and disburse government funds require personnel support to comply with the provisions of the law.</p>
         </div>
         <div class="col-xs-12 col-sm-6 services p-5">
           <i class="far fa-handshake"></i>
@@ -188,7 +188,7 @@
         <div class="col-xs-12 col-sm-6 services p-5">
           <i class="fas fa-balance-scale"></i>
           <h3>Legal Services</h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima porro, optio nam eum dolorum quae dolor officia, nobis distinctio nesciunt fugit deleniti enim. Necessitatibus eum rem quidem molestias adipisci enim.</p>
+          <p>Formulates measures and provides legal assistance and support to the barangay captain and other barangay officials. Represents the barangay hall and its officials in all civil cases and special proceedings. Renders legal opinions in writing on any question of law.</p>
 
         </div>
         <div class="col-xs-12 col-sm-6 services p-5">
