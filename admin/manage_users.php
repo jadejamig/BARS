@@ -6,7 +6,6 @@
   }
   
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -81,7 +80,9 @@
 
             include '../connection.php';
 
-            $query = "SELECT * from user WHERE verified_user = 1";
+            $user_id = $_SESSION['user_id'];
+
+            $query = "SELECT * from user WHERE verified_user = 1 AND user_id <> '$user_id'";
             $result = mysqli_query($conn,$query);
 
             while($row = mysqli_fetch_array($result)){
