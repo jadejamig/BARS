@@ -6,6 +6,10 @@
       header("location: 404_found.php");
     }
   }
+
+  if(isset($_SESSION['month'])){
+    unset($_SESSION['month']);
+  }
 ?>
 
 <!DOCTYPE html>

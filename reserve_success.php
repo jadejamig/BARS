@@ -1,3 +1,9 @@
+<?php
+  session_start();
+
+  unset($_SESSION['month']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
