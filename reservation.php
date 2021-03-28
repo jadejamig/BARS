@@ -15,20 +15,12 @@
     if ($_SESSION['month'] != 12){
       $_SESSION['month'] = $_SESSION['month'] + 1;
     }
-    // else if($_SESSION['month'] >= 12){
-    //   $_SESSION['month'] = 1;
-    //   $_SESSION['year'] =  $_SESSION['year'] + 1;
-    // }
   }
 
   elseif (isset($_POST['back'])){
     if ($_SESSION['month'] != 1){
       $_SESSION['month'] = $_SESSION['month'] - 1;
     }
-    // else if($_SESSION['month'] <= 12){
-    //   $_SESSION['month'] = 1;
-    //   $_SESSION['year'] =  $_SESSION['year'] - 1;
-    // }
   }
   
 
