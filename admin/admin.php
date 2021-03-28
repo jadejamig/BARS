@@ -1,3 +1,12 @@
+<?php
+  session_start();
+
+  if(!isset($_SESSION['login']) || $_SESSION['usertype'] != 1){
+    header("location: ../404_found.php");
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

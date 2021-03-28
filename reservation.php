@@ -1,6 +1,10 @@
 <?php
   session_start();
   date_default_timezone_set("Asia/Manila");
+
+  if(!isset($_SESSION['login']) || $_SESSION['usertype'] != 0){
+    header("location: 404_found.php");
+  }
   
   if (!isset($_SESSION['month']) || !isset($_SESSION['year']) ){
     $_SESSION['month'] = date('n');
@@ -78,18 +82,27 @@
             <li class="nav-item">
               <a class="nav-link" href="about.php">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="reservation.php">Reservation</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="my_reservations.php">My Reservations</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.php">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="sign_up.php">Sign up</a>
-            </li>
+            <?php
+              if(isset($_SESSION['login'])){
+                echo "<li class=\"nav-item\">
+                  <a class=\"nav-link\" href=\"reservation.php\">Reservation</a>
+                </li>
+                <li class=\"nav-item\">
+                  <a class=\"nav-link\" href=\"my_reservations.php\">My Reservations</a>
+                </li>
+                <li class=\"nav-item\">
+                  <a class=\"nav-link\" href=\"log_out.php\">Sign out</a>
+                </li>";
+              }
+              else{
+                echo "<li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"login.php\">Login</a>
+                      </li>
+                      <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"sign_up.php\">Sign up</a>
+                      </li>";
+              }
+            ?>
           </ul>
         </div>
       </div>
@@ -151,7 +164,7 @@
                               <td scope="col"  class="day day-num"><a href="reservation_schedule.php?month=<?php echo $month_reference[$month];?>&day=<?php echo $day_count ?>"><?php echo $day_count?></a></td>
                             <?php
                           }
-                          else if ($day_count >= $day_today && $month == $month_today) {
+                          else if ($day_count > $day_today && $month == $month_today) {
                             ?>
                               <td scope="col"  class="day day-num"><a href="reservation_schedule.php?month=<?php echo $month_reference[$month];?>&day=<?php echo $day_count ?>"><?php echo $day_count?></a></td>
                             <?php
@@ -165,7 +178,7 @@
                       }
                       else{
                           ?>
-                            <td scope="col"  class="day day-num bg-light"></td>
+                            <td scope="col"  class=""></td>
                           <?php
                       }
                       
@@ -180,4 +193,7 @@
   </body>
 </html>
 
+<?php
+  unset($_SESSION['month']);
+?>
 

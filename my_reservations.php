@@ -1,3 +1,11 @@
+<?php
+  session_start();
+
+  if(!isset($_SESSION['login']) || $_SESSION['usertype'] != 0){
+    header("location: 404_found.php");
+  }
+  
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,18 +44,27 @@
             <li class="nav-item">
               <a class="nav-link" href="about.php">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="reservation.php">Reservation</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="my_reservations.php">My Reservations</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.php">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="sign_up.php">Sign up</a>
-            </li>
+            <?php
+              if(isset($_SESSION['login'])){
+                echo "<li class=\"nav-item\">
+                  <a class=\"nav-link\" href=\"reservation.php\">Reservation</a>
+                </li>
+                <li class=\"nav-item\">
+                  <a class=\"nav-link\" href=\"my_reservations.php\">My Reservations</a>
+                </li>
+                <li class=\"nav-item\">
+                  <a class=\"nav-link\" href=\"log_out.php\">Sign out</a>
+                </li>";
+              }
+              else{
+                echo "<li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"login.php\">Login</a>
+                      </li>
+                      <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"sign_up.php\">Sign up</a>
+                      </li>";
+              }
+            ?>
           </ul>
         </div>
       </div>
@@ -73,7 +90,6 @@
           </thead>
           <tbody>
             <?php
-              session_start();
               $user_id = $_SESSION['user_id'];
 
               include 'connection.php';
