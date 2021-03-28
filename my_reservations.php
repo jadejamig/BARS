@@ -1,6 +1,8 @@
 <?php
   session_start();
 
+  unset($_SESSION['month']);
+  
   if(!isset($_SESSION['login']) || $_SESSION['usertype'] != 0){
     header("location: 404_found.php");
   }

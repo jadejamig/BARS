@@ -1,5 +1,15 @@
 <?php
   session_start();
+
+  if(isset($_SESSION['usertype'])){
+    if($_SESSION['usertype'] != 0){
+      header("location: 404_found.php");
+    }
+  }
+
+  if(isset($_SESSION['month'])){
+    unset($_SESSION['month']);
+  }
 ?>
 
 <!DOCTYPE html>
