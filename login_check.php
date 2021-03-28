@@ -29,7 +29,6 @@ if (isset($_POST['login'])){
     if(mysqli_num_rows($result) == 1){
       
       $row = mysqli_fetch_array($result);
-      $_SESSION['login'] = true;
       $_SESSION['user_id'] = $row['user_id'];
       $_SESSION['first_name'] = $row['first_name'];
       $_SESSION['last_name'] = $row['last_name'];
@@ -37,6 +36,7 @@ if (isset($_POST['login'])){
       $_SESSION['verified'] = $row['verified_user'];
 
       if($_SESSION['usertype'] == 1){
+        $_SESSION['login'] = true;
         header("location: admin/admin.php");
       }
       else if($_SESSION['verified'] == 0){
