@@ -108,7 +108,7 @@
                   $query = "SELECT * from user WHERE verified_user = 1 AND user_id <> '$user_id'";
                 }
                 else {
-                  $query = "SELECT * from user WHERE verified_user = 1 AND user_id like '$_POST[searchkey]'";
+                  $query = "SELECT * from user WHERE verified_user = 1 AND CONCAT(`user_id`, `first_name`, `last_name`) LIKE '%$_POST[searchkey]%' AND user_id <> '$user_id'";
                 } 
             }
             else{

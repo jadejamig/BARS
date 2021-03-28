@@ -102,7 +102,19 @@
 
               include '../connection.php';
 
-              $query = "SELECT * from user WHERE verified_user <> 1";
+              if (isset($_POST['search'])){
+                if (trim($_POST['searchkey']) == ""){
+                  $query = "SELECT * from user WHERE verified_user <> 1";
+                }
+                else {
+                  $query = "SELECT * from user WHERE verified_user <> 1 AND CONCAT(`user_id`, `first_name`, `last_name`) LIKE '%$_POST[searchkey]%'";
+                } 
+              }
+              else{
+                $query = "SELECT * from user WHERE verified_user <> 1";
+              }
+
+              
               $result = mysqli_query($conn,$query);
 
               if($result){

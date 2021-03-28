@@ -66,22 +66,22 @@
 
     <!-- SEARCH SECTION -->
     <div class="search-section container-fluid">
-                <form class="form-inline" method="post">
-                      <input
-                        type="text"
-                        name="searchkey"
-                        class="form-control mb-2 mr-2"
-                        placeholder="Search"
-                      />
+      <form class="form-inline" method="post">
+        <input
+          type="text"
+          name="searchkey"
+          class="form-control mb-2 mr-2"
+          placeholder="Search"
+          />
                       
-                    <input
-                      name="search"
-                      class="btn btn-block login-btn mb-2"
-                      type="submit"
-                      value="Search"
-                    />
-                </form>
-        </div>
+        <input
+          name="search"
+          class="btn btn-block login-btn mb-2"
+          type="submit"
+          value="Search"
+          />
+      </form>
+    </div>
 
     <!-- CALENDAR SECTION -->
     <div class="container-fluid padding calendar">
@@ -103,12 +103,30 @@
 
               include '../connection.php';
 
-              $query = "SELECT reservations.reservation_id as reservation_id, reservations.user_id as user_id, concat(user.first_name,' ',user.last_name) as complete_name
+              if (isset($_POST['search'])){
+                if (trim($_POST['searchkey']) == ""){
+                  $query = "SELECT reservations.reservation_id as reservation_id, reservations.user_id as user_id, concat(user.first_name,' ',user.last_name) as complete_name
                         ,reservations.reservation_date as reservation_date,reservations.batch_time as batch_time,reservations.concern as concern 
                         FROM reservations, user 
                         WHERE reservations.user_id = user.user_id AND reservations.complete = 0
                         ORDER BY reservations.reservation_date ASC, reservations.batch_time ASC, reservations.time_reserved ASC";
-              
+                }
+                else {
+                  $query = "SELECT reservations.reservation_id as reservation_id, reservations.user_id as user_id, concat(user.first_name,' ',user.last_name) as complete_name
+                  ,reservations.reservation_date as reservation_date,reservations.batch_time as batch_time,reservations.concern as concern 
+                  FROM reservations, user 
+                  WHERE reservations.user_id = user.user_id AND reservations.complete = 0 AND CONCAT(reservations.reservation_id, reservations.user_id, user.first_name,user.last_name,reservations.reservation_date,reservations.batch_time,reservations.concern) LIKE '%$_POST[searchkey]%'
+                  ORDER BY reservations.reservation_date ASC, reservations.batch_time ASC, reservations.time_reserved ASC";
+                } 
+              }
+              else{
+                $query = "SELECT reservations.reservation_id as reservation_id, reservations.user_id as user_id, concat(user.first_name,' ',user.last_name) as complete_name
+                        ,reservations.reservation_date as reservation_date,reservations.batch_time as batch_time,reservations.concern as concern 
+                        FROM reservations, user 
+                        WHERE reservations.user_id = user.user_id AND reservations.complete = 0
+                        ORDER BY reservations.reservation_date ASC, reservations.batch_time ASC, reservations.time_reserved ASC";
+              }
+
               $result = mysqli_query($conn,$query);
 
               if($result){
