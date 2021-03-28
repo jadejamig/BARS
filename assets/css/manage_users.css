@@ -102,7 +102,6 @@ table.table-bordered > tbody > tr > td:nth-child(1) {
   background-color: #000;
   border-radius: 4px;
   font-size: 17px;
-  /* font-weight: bold; */
   line-height: 20px;
   color: #fff;
   max-width: 100px;
