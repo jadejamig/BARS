@@ -18,6 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet"/>
     <link href="../assets/css/manage_users.css" rel="stylesheet" />
     <link rel="icon" href="../img/bgy_logo.png">
   </head>
@@ -63,8 +64,30 @@
       </div>
     </nav>
 
+    <!-- SEARCH SECTION -->
+    <div class="container-fluid padding">
+        <div class="search-section">
+                <form class="form-inline" method="post">
+                      <input
+                        type="text"
+                        name="searchkey"
+                        class="form-control mb-2 mr-2"
+                        placeholder="Search"
+                      />
+                      
+                    <input
+                      name="search"
+                      class="btn btn-block login-btn mb-2"
+                      type="submit"
+                      value="Search"
+                    />
+                </form>
+        </div>
+    </div>
+
     <!-- CALENDAR SECTION -->
     <div class="container-fluid padding calendar">
+      
       <div class="row heading">
         <table class="table table-bordered text-center">
           <thead>
@@ -82,7 +105,13 @@
 
             $user_id = $_SESSION['user_id'];
 
-            $query = "SELECT * from user WHERE verified_user = 1 AND user_id <> '$user_id'";
+            if (isset($_POST['search'])){
+              $query = "SELECT * from user WHERE verified_user = 1 AND user_id like '$_POST[searchkey]'";
+            } 
+            
+            else{
+              $query = "SELECT * from user WHERE verified_user = 1 AND user_id <> '$user_id'";
+            }
             $result = mysqli_query($conn,$query);
 
             while($row = mysqli_fetch_array($result)){

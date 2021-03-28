@@ -81,9 +81,6 @@ table.table-bordered > tbody > tr > td:nth-child(1) {
   text-decoration: none;
 }
 
-.day-num {
-  height: 4rem;
-}
 .text-white a {
   color: white !important;
 }

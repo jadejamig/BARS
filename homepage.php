@@ -183,7 +183,7 @@
         <div class="col-xs-12 col-sm-6 services p-5">
           <i class="far fa-handshake"></i>
           <h3>Social Services</h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima porro, optio nam eum dolorum quae dolor officia, nobis distinctio nesciunt fugit deleniti enim. Necessitatibus eum rem quidem molestias adipisci enim.</p>
+          <p>Barangay Manlot-od is aims to formulate and implement comprehensive programs and services that is committed to develop individuals, groups, and communities to be self-reliant. It is also committed to improve the quality of life of disadvantaged individual, groups and communities through imposing social welfare interventions.</p>
         </div>
         <div class="col-xs-12 col-sm-6 services p-5">
           <i class="fas fa-balance-scale"></i>
@@ -194,7 +194,7 @@
         <div class="col-xs-12 col-sm-6 services p-5">
           <i class="fas fa-heartbeat"></i>
           <h3>Health Services</h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima porro, optio nam eum dolorum quae dolor officia, nobis distinctio nesciunt fugit deleniti enim. Necessitatibus eum rem quidem molestias adipisci enim.</p>
+          <p>Barangay Manlot-od  will serve as the frontline for public health of its constituents which focuses on issues related to the holistic health and well-being of the citizenry. It shall protect the safety and health outcomes of the community through education, policy making and research for disease or injury prevention.</p>
         </div>
       </div>
     </div>
