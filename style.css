@@ -7,7 +7,13 @@ body {
   font-family: "Poppins", sans-serif;
   color: #222;
 }
-
+.carousel-caption a {
+  color: #ffffff;
+  text-decoration: none !important;
+}
+.carousel-caption a:hover {
+  color: #000000;
+}
 footer .img-fluid {
   max-height: 200px;
   max-width: 200px;

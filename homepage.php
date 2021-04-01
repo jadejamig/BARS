@@ -93,7 +93,7 @@
             <!-- <h1 class="display-2">Outreach Programs</h1> -->
             <h3>OUTREACH PROGRAMS</h3>
             <button type="button" class="btn btn-outline-light btn-lg">
-              Learn more
+             <a href="about.php">Learn more</a> 
             </button>
             <!-- <button type="button" class="btn btn-primary btn-lg">
               Learn More
